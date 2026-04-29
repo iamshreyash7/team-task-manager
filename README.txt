@@ -185,7 +185,4 @@ team-task-manager/
             ├── ProjectDetailPage.js
             └── UsersPage.js
 
-================================================================
-Built by: [Your Name]
-Contact : [Your Email]
-================================================================
+
