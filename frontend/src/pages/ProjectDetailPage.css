@@ -15,6 +15,8 @@
   align-items: center;
   gap: 24px;
   background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px 20px;
@@ -42,7 +44,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  background: var(--accent-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,6 +101,8 @@
 
 .kanban-col {
   background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -140,15 +144,16 @@
 
 .task-card {
   background: var(--bg-secondary);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-sm);
   padding: 12px;
   transition: all 0.15s;
 }
 
 .task-card:hover {
-  border-color: var(--border-light);
-  box-shadow: var(--shadow-sm);
+  border-color: rgba(217, 70, 239, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 70, 239, 0.1);
 }
 
 .task-overdue {
@@ -290,7 +295,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  background: var(--accent-gradient);
   display: flex;
   align-items: center;
   justify-content: center;

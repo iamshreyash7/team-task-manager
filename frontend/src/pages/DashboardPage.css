@@ -7,6 +7,8 @@
 
 .stat-card {
   background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--border);
   border-top: 3px solid;
   border-radius: var(--radius);
@@ -73,7 +75,8 @@
 }
 
 .task-row:hover {
-  background: var(--bg-hover);
+  background: rgba(39, 39, 42, 0.5);
+  transform: translateX(4px);
 }
 
 .task-title {
@@ -111,7 +114,8 @@
 }
 
 .project-row:hover {
-  background: var(--bg-hover);
+  background: rgba(39, 39, 42, 0.5);
+  transform: translateX(4px);
 }
 
 .project-row-name {
@@ -143,7 +147,7 @@
 
 .progress-fill {
   height: 100%;
-  background: var(--accent);
+  background: var(--accent-gradient);
   border-radius: 2px;
   transition: width 0.3s ease;
 }
