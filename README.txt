@@ -1,188 +1,99 @@
-================================================================
-TASKFLOW - Team Task Manager
-Full-Stack Web Application | MERN Stack
-================================================================
+# 🌊 TaskFlow - Team Task Manager
 
-OVERVIEW
---------
-TaskFlow is a full-stack team task management application built with
-the MERN stack (MongoDB, Express.js, React, Node.js). It enables
-teams to create projects, assign tasks, and track progress with
-role-based access control (Admin / Member).
+![MERN Stack](https://img.shields.io/badge/MERN-Stack-blue?style=for-the-badge&logo=mongodb)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-Backend-000000?style=for-the-badge&logo=express&logoColor=white)
 
-TECH STACK
-----------
-Frontend  : React 18, React Router v6, Axios, CSS Variables
-Backend   : Node.js, Express.js, MongoDB, Mongoose
-Auth      : JWT (JSON Web Tokens), bcryptjs
-Deployment: Railway (backend + MongoDB) + Railway (frontend)
+TaskFlow is a premium full-stack team task management application built with the **MERN** stack (MongoDB, Express.js, React, Node.js). It empowers teams to create projects, assign tasks, and track progress seamlessly using a visual Kanban board, all wrapped in a stunning modern UI.
 
-KEY FEATURES
-------------
-1. AUTHENTICATION
-   - User signup and login with JWT tokens
-   - Passwords hashed with bcryptjs
-   - Protected routes on both frontend and backend
-   - Role selection during signup (Admin / Member)
+🚀 **Live Demo:** [View TaskFlow on Railway](https://team-task-manager-production-2131.up.railway.app)
 
-2. ROLE-BASED ACCESS CONTROL
-   - Admin: Create/delete projects, create/assign/delete tasks,
-            add members, manage user roles
-   - Member: View projects they belong to, update status of
-             tasks assigned to them
+---
 
-3. PROJECT MANAGEMENT
-   - Create, view, and update projects (Admin only)
-   - Add members to projects by email
-   - Track project status (active, completed, archived)
-   - Project due dates
+## ✨ Premium UI: macOS Glassmorphism
+The application features a highly refined **macOS Glass** design aesthetic:
+- **Vibrant Backgrounds:** A dynamic gradient mesh wallpaper serves as the foundation.
+- **Advanced Translucency:** Components utilize deep backdrop blurs (`blur(24px) saturate(180%)`) to create realistic frosted glass effects.
+- **Precision Glass Edges:** Crisp 1px highlight borders simulate light refracting off physical glass panels.
+- **Fluid Micro-Animations:** Soft hover states and dynamic drop shadows make the UI feel alive and responsive.
 
-4. TASK MANAGEMENT
-   - Create tasks within projects (Admin only)
-   - Assign tasks to project members
-   - Set priority (low, medium, high)
-   - Set due dates with automatic overdue detection
-   - Update task status (todo, in-progress, completed)
-   - Delete tasks (Admin only)
+## 🛠️ Key Features
 
-5. DASHBOARD
-   - Live stats: total tasks, in-progress, completed, overdue
-   - Recent tasks across all projects
-   - Active projects with progress bars
+* **Authentication & Security:** Secure signup/login using JWT (JSON Web Tokens) and bcryptjs password hashing.
+* **Role-Based Access Control (RBAC):**
+  * **Admin:** Full privileges to create/delete projects, assign tasks, and manage team members.
+  * **Member:** Access to view assigned projects and update task statuses.
+* **Project Management:** Create active projects, assign due dates, and invite members via email.
+* **Kanban & List Views:** Visualize workflows with dynamic Kanban columns (To Do, In Progress, Completed) or view a structured tabular list.
+* **Live Dashboard:** Get a bird's-eye view of your team's performance with real-time statistics on active, completed, and overdue tasks.
 
-6. KANBAN BOARD VIEW
-   - Visual board with To Do / In Progress / Completed columns
-   - Color-coded priority and overdue indicators
+---
 
-7. LIST VIEW
-   - Tabular view of all project tasks
-   - Filter by status visible at a glance
+## 💻 Tech Stack
 
-8. TEAM VIEW
-   - See all project members with their roles
+**Frontend:**
+- React 18 & React Router v6
+- Axios (API Client)
+- Custom CSS (Glassmorphism UI System)
 
-API ENDPOINTS
--------------
-Auth:
-  POST   /api/auth/signup        Register new user
-  POST   /api/auth/login         Login
-  GET    /api/auth/me            Get current user
+**Backend:**
+- Node.js & Express.js
+- MongoDB & Mongoose (ODM)
+- JSON Web Tokens (JWT) for secure state persistence
 
-Projects:
-  GET    /api/projects           Get all projects (for current user)
-  POST   /api/projects           Create project (admin)
-  GET    /api/projects/:id       Get single project
-  PUT    /api/projects/:id       Update project
-  POST   /api/projects/:id/members  Add member
-  DELETE /api/projects/:id       Delete project + all its tasks
+---
 
-Tasks:
-  GET    /api/tasks              Get all tasks (across projects)
-  GET    /api/tasks/project/:id  Get tasks for specific project
-  POST   /api/tasks              Create task (admin)
-  PUT    /api/tasks/:id          Update task (admin full, member status only)
-  DELETE /api/tasks/:id          Delete task (admin)
+## 🚀 Local Setup Instructions
 
-Users:
-  GET    /api/users              Get all users
-  GET    /api/users/:id          Get single user
-  PUT    /api/users/:id          Update user / change role (admin)
+### Prerequisites
+- Node.js (v18+)
+- MongoDB (Local instance or MongoDB Atlas cluster)
 
-DATABASE SCHEMA
----------------
-User:
-  name, email (unique), password (hashed), role (admin/member), timestamps
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/team-task-manager.git
+cd team-task-manager
+```
 
-Project:
-  name, description, owner (ref: User), members [{user, role}],
-  status (active/completed/archived), dueDate, timestamps
+### 2. Backend Setup
+```bash
+cd backend
+npm install
+```
+Create a `.env` file in the `backend` directory:
+```env
+PORT=5001
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_jwt_key
+FRONTEND_URL=http://localhost:3000
+```
+Start the backend server:
+```bash
+npm run dev
+```
 
-Task:
-  title, description, project (ref: Project), assignedTo (ref: User),
-  createdBy (ref: User), status (todo/in-progress/completed),
-  priority (low/medium/high), dueDate, isOverdue (virtual), timestamps
+### 3. Frontend Setup
+Open a new terminal window:
+```bash
+cd frontend
+npm install
+```
+Start the React development server:
+```bash
+npm start
+```
+The app will open automatically at `http://localhost:3000`.
 
-SETUP INSTRUCTIONS (Local Development)
----------------------------------------
-Prerequisites: Node.js 18+, MongoDB (local or Atlas)
+---
 
-1. Clone the repository:
-   git clone <your-repo-url>
-   cd team-task-manager
+## ☁️ Deployment
 
-2. Setup Backend:
-   cd backend
-   npm install
-   cp .env.example .env
-   # Edit .env: set MONGO_URI and JWT_SECRET
-   npm run dev       # runs on http://localhost:5000
+This project is configured for seamless deployment on **Railway.app**.
+1. **Database:** Create a MongoDB service on Railway (or use Atlas).
+2. **Backend:** Deploy the `/backend` directory and provide the `MONGO_URI` and `JWT_SECRET` environment variables.
+3. **Frontend:** Deploy the `/frontend` directory. Ensure `src/utils/api.js` points to your live backend URL. Railway will automatically detect React and build the static assets.
 
-3. Setup Frontend:
-   cd frontend
-   npm install
-   npm start         # runs on http://localhost:3000
+---
 
-DEPLOYMENT (Railway)
---------------------
-Backend:
-  1. Push code to GitHub
-  2. Create new project on railway.app
-  3. Add MongoDB plugin (or use MongoDB Atlas)
-  4. Set environment variables:
-       MONGO_URI    = <your mongodb connection string>
-       JWT_SECRET   = <a long random secret>
-       FRONTEND_URL = <your frontend railway URL>
-  5. Deploy from GitHub repo (root: /backend)
-  6. Railway auto-detects Node.js and runs npm start
-
-Frontend:
-  1. Create another Railway service
-  2. Set environment variable:
-       REACT_APP_API_URL = <your backend railway URL>/api
-  3. Deploy from GitHub repo (root: /frontend)
-  4. Railway runs: npm run build and serves static files
-
-DEMO CREDENTIALS
-----------------
-After creating accounts, the first admin can manage roles via Users page.
-Recommended test setup:
-  Admin  : admin@demo.com  / admin123
-  Member : member@demo.com / member123
-
-PROJECT STRUCTURE
------------------
-team-task-manager/
-├── backend/
-│   ├── server.js          Entry point
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── Project.js
-│   │   └── Task.js
-│   ├── routes/
-│   │   ├── auth.js
-│   │   ├── projects.js
-│   │   ├── tasks.js
-│   │   └── users.js
-│   ├── middleware/
-│   │   └── auth.js        JWT protection + admin guard
-│   └── .env.example
-└── frontend/
-    ├── public/
-    │   └── index.html
-    └── src/
-        ├── App.js          Routes
-        ├── index.js
-        ├── index.css       Global styles
-        ├── context/
-        │   └── AuthContext.js
-        ├── utils/
-        │   └── api.js      Axios instance with interceptors
-        └── pages/
-            ├── LoginPage.js
-            ├── SignupPage.js
-            ├── DashboardPage.js
-            ├── ProjectsPage.js
-            ├── ProjectDetailPage.js
-            └── UsersPage.js
-
-
+*Designed and developed as a complete MERN stack solution.*
