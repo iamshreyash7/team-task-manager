@@ -334,3 +334,26 @@
     grid-template-columns: 1fr;
   }
 }
+
+.task-status-select {
+  background: var(--bg-glass-light);
+  border: 1px solid var(--border-glass-dark);
+  color: var(--text-primary);
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.task-status-select:hover,
+.task-status-select:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.task-status-select option {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}

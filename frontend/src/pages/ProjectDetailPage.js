@@ -198,6 +198,15 @@ const ProjectDetailPage = () => {
       .finally(() => setLoading(false));
   }, [id]);
 
+  const handleStatusChange = async (taskId, newStatus) => {
+    try {
+      const res = await api.put(`/tasks/${taskId}`, { status: newStatus });
+      setTasks(tasks.map(t => t._id === taskId ? res.data : t));
+    } catch (err) {
+      alert(err.response?.data?.message || 'Failed to update task status.');
+    }
+  };
+
   const handleDeleteTask = async (taskId) => {
     if (!window.confirm('Delete this task?')) return;
     try {
@@ -312,6 +321,15 @@ const ProjectDetailPage = () => {
                         </div>
                       )}
                       <div className="task-card-actions">
+                        <select 
+                          className="task-status-select"
+                          value={task.status}
+                          onChange={(e) => handleStatusChange(task._id, e.target.value)}
+                        >
+                          <option value="todo">To Do</option>
+                          <option value="in-progress">In Progress</option>
+                          <option value="completed">Completed</option>
+                        </select>
                         <button className="task-action-btn" onClick={() => setTaskModal(task)}>Edit</button>
                         {isAdmin && (
                           <button className="task-action-btn task-action-delete"
@@ -354,7 +372,17 @@ const ProjectDetailPage = () => {
                       <div className="table-task-title">{task.title}</div>
                       {task.description && <div className="table-task-desc">{task.description}</div>}
                     </td>
-                    <td><span className={`badge badge-${task.status}`}>{task.status}</span></td>
+                    <td>
+                      <select 
+                        className="task-status-select"
+                        value={task.status}
+                        onChange={(e) => handleStatusChange(task._id, e.target.value)}
+                      >
+                        <option value="todo">To Do</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                      </select>
+                    </td>
                     <td><span className={`badge badge-${task.priority}`}>{task.priority}</span></td>
                     <td>{task.assignedTo?.name || <span style={{color:'var(--text-muted)'}}>Unassigned</span>}</td>
                     <td>
