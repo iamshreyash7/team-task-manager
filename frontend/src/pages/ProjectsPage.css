@@ -6,23 +6,20 @@
 
 .project-card {
   background: var(--bg-card);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 24px;
   text-decoration: none;
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  transition: all 0.3s ease;
+  gap: 12px;
+  transition: all 0.2s ease;
 }
 
 .project-card:hover {
-  border-color: rgba(217, 70, 239, 0.4);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(217, 70, 239, 0.15);
+  border-color: var(--border-light);
+  transform: translateY(-1px);
 }
 
 .project-card-header {
