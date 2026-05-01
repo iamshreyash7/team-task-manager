@@ -2,9 +2,11 @@
   <h1>🌊 TaskFlow</h1>
   <p><strong>A Premium, Enterprise-Grade Team Task Management Platform</strong></p>
 
-  <p>
-    <a href="https://team-task-manager-production-2131.up.railway.app"><img src="https://img.shields.io/badge/Live_Demo-TaskFlow_App-6366f1?style=for-the-badge" alt="Live Demo" /></a>
-  </p>
+  <br />
+  <a href="https://team-task-manager-production-2131.up.railway.app">
+    <img src="https://img.shields.io/badge/🚀_CLICK_HERE_TO_VIEW_LIVE_APP-6366f1?style=for-the-badge&logo=railway&logoColor=white" alt="Live Demo" />
+  </a>
+  <br /><br />
 
   <p>
     <img src="https://img.shields.io/badge/MERN-Stack-blue?style=flat-square&logo=mongodb" alt="MERN Stack" />
@@ -46,10 +48,10 @@
 
 ## 🚀 Live Demonstration
 
-The application is deployed as a microservice architecture on Railway.
-**🔗 [Click Here to View the Live App](https://team-task-manager-production-2131.up.railway.app)**
-
-*To fully explore the app, create two accounts to test the real-time project invitation and Role-Based Access controls.*
+> ### 🌐 [Click Here to Access the Live Application](https://team-task-manager-production-2131.up.railway.app)
+> *The application is deployed as a high-performance microservice architecture on Railway.*
+> 
+> **💡 Testing Tip:** *To fully explore the platform, create two separate accounts (or use two different browsers) to test the real-time project invitations and Role-Based Access controls!*
 
 ---
 
