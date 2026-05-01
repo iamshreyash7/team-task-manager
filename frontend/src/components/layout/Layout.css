@@ -6,8 +6,10 @@
 .sidebar {
   width: 240px;
   min-height: 100vh;
-  background: var(--bg-secondary);
-  border-right: 1px solid var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-right: 1px solid var(--border-glass-dark);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -37,7 +39,9 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: var(--text-primary);
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sidebar-nav {
@@ -67,8 +71,8 @@
 }
 
 .nav-item-active {
-  background: var(--bg-hover);
-  color: var(--text-primary);
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--accent-light);
 }
 
 .nav-icon {
@@ -93,13 +97,13 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #FFFFFF;
+  background: var(--accent-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   font-size: 14px;
-  color: #000000;
+  color: white;
   flex-shrink: 0;
 }
 
@@ -150,8 +154,10 @@
 
 .topbar {
   height: 60px;
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--border-glass-dark);
   display: flex;
   align-items: center;
   justify-content: space-between;

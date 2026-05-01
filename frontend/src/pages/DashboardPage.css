@@ -6,8 +6,12 @@
 }
 
 .stat-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-glass);
+  border-bottom-color: var(--border-glass-dark);
+  border-right-color: var(--border-glass-dark);
   border-top: 3px solid;
   border-radius: var(--radius);
   padding: 20px;
@@ -73,7 +77,8 @@
 }
 
 .task-row:hover {
-  background: var(--bg-hover);
+  background: var(--bg-glass-light);
+  transform: translateX(4px);
 }
 
 .task-title {
@@ -111,7 +116,8 @@
 }
 
 .project-row:hover {
-  background: var(--bg-hover);
+  background: var(--bg-glass-light);
+  transform: translateX(4px);
 }
 
 .project-row-name {
@@ -143,7 +149,7 @@
 
 .progress-fill {
   height: 100%;
-  background: var(--accent);
+  background: var(--accent-gradient);
   border-radius: 2px;
   transition: width 0.3s ease;
 }

@@ -14,8 +14,12 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-glass);
+  border-bottom-color: var(--border-glass-dark);
+  border-right-color: var(--border-glass-dark);
   border-radius: var(--radius);
   padding: 16px 20px;
   margin-bottom: 20px;
@@ -42,13 +46,13 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #FFFFFF;
+  background: var(--accent-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
   font-weight: 700;
-  color: #000000;
+  color: white;
   border: 2px solid var(--bg-card);
   margin-left: -6px;
 }
@@ -98,8 +102,12 @@
 }
 
 .kanban-col {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-glass);
+  border-bottom-color: var(--border-glass-dark);
+  border-right-color: var(--border-glass-dark);
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -147,8 +155,9 @@
 }
 
 .task-card:hover {
-  border-color: var(--border-light);
-  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .task-overdue {
@@ -290,12 +299,12 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #FFFFFF;
+  background: var(--accent-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: #000000;
+  color: white;
   font-size: 14px;
   flex-shrink: 0;
 }

@@ -5,8 +5,12 @@
 }
 
 .project-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-glass);
+  border-bottom-color: var(--border-glass-dark);
+  border-right-color: var(--border-glass-dark);
   border-radius: var(--radius);
   padding: 24px;
   text-decoration: none;
@@ -18,8 +22,9 @@
 }
 
 .project-card:hover {
-  border-color: var(--border-light);
-  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
 }
 
 .project-card-header {
